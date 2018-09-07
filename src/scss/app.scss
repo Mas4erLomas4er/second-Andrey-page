@@ -1,0 +1,22 @@
+@import "partials/config";
+@import "common/grid";
+@import "common/reset";
+@import "modules/main-content";
+@import "modules/icon-bar";
+
+body {
+    background: #F5F5F5;
+    font-family: 'PT Serif', Arial, serif;
+}
+
+html {
+    font-size: 16px;
+    @media only screen and (max-width: 300px) {
+        font-size: 10px
+    }
+}
+
+.main-block {
+    display: flex;
+    justify-content: center;
+}
