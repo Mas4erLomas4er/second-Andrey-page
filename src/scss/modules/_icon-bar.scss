@@ -1,13 +1,30 @@
+@mixin social-buttons {
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 1.65rem;
+    color: #fff;
+    opacity: .7;
+    transition: all .5s ease;
+}
+
 .icon-bar {
     position: fixed;
-    top: 50%;
+    top: calc(50% - (165px / 2));
     left: 0;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
     z-index: 999;
+    &.open {
+        a, button {
+            opacity: 1;
+        }
+    }
     @media screen and (max-width: 740px) {
         display: none;
+        top: auto;
+        bottom: 10px;
+        left: 10px;
     }
     a {
         display: block;
@@ -26,6 +43,26 @@
 
         &.vk {
             background: #47569b;
+        }
+    }
+    button {
+        @include social-buttons;
+        display: none;
+        border: none;
+        outline: none;
+        background-color: #00b600;
+    }
+    @media screen and (max-width: 460px) {
+        display: block;
+        button {
+            display: block;
+        }
+        .social {
+            display: none;
+        }
+        a {
+            @include social-buttons;
+            margin-bottom: 15px;
         }
     }
 }
